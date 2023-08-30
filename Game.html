@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Game</title>
+</head>
+<body>
+<h2> Guess the Number</h2>
+<h3>Guess the   Number between 1 to 100</h3>
+<input type ="number" id="guessInput">
+<button id="guessbtn">Submit</button>
+<p id="msg"></p>
+</body>
+<script>
+	var randomNumber=Math.floor(Math.random()*100)+1;
+  var attempts=0;
+document.getElementById("guessbtn").addEventListener('click',function() {
+	var guess=parseInt(document.getElementById("guessInput").value);
+	attempts++;
+	if(guess===randomNumber){
+		displaymsg("congrulations! you guessed the number in " + attempts +"attempt")
+		document getElementById("guessbtn").disabled=true;
+}
+else if(guess<randomNumber){
+	displaymsg("To low try a high number ".);
+}
+else{
+	displaymsg("To high! try a lower number".);
+}
+});
+function displaymsg(K){
+
+	document.getElementById("msg").textContent=K;
+}
+</script>
+</html>
